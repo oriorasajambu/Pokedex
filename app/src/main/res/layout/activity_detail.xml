@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.dicoding.customview.CustomToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:custom_text="Details"
+        app:custom_right_icon="@drawable/ic_share"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_details"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcv_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="22dp"
+                app:cardMaxElevation="4dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="22dp">
+
+                    <ImageView
+                        android:id="@+id/iv_pokeball"
+                        android:outlineProvider="none"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/pokeball"
+                        android:translationZ="1dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/iv_image"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="22dp"
+                        android:layout_marginTop="22dp"
+                        android:layout_marginEnd="22dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/bulbasaur"
+                        app:layout_constraintDimensionRatio="H,1:1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/tv_divider"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/iv_image"
+                        tools:text="001" />
+
+                    <TextView
+                        android:id="@+id/tv_divider"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginEnd="3dp"
+                        android:text="-"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/tv_name"
+                        app:layout_constraintStart_toEndOf="@id/tv_id"
+                        app:layout_constraintTop_toBottomOf="@id/iv_image" />
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:textAllCaps="true"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tv_divider"
+                        app:layout_constraintTop_toBottomOf="@id/iv_image"
+                        tools:text="BULBASUR" />
+
+                    <com.example.dicoding.customview.CustomPokemonType
+                        android:id="@+id/rv_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+                    <TextView
+                        android:id="@+id/tv_descriptions"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:textAlignment="center"
+                        android:layout_marginStart="44dp"
+                        android:layout_marginEnd="44dp"
+                        android:textColor="#333333"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/rv_type"
+                        tools:text="asdasdasdasd asdasdasdas asdasdasdasd" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcv_trivia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="22dp"
+                app:cardMaxElevation="4dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toStartOf="@id/mcv_detail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mcv_image">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp">
+
+                    <TextView
+                        android:id="@+id/tv_label_ability"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ability"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_label_hidden_power"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Hidden Power: "
+                        android:textColor="#333333"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@id/gl_left_b1"
+                        app:layout_constraintTop_toBottomOf="@id/tv_label_ability"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/tv_value_hidden_power"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:textColor="#333333"
+                        android:textSize="10sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tv_label_hidden_power"
+                        app:layout_constraintStart_toStartOf="@id/gl_left_b2"
+                        tools:ignore="SmallSp"
+                        tools:text="Solar Power" />
+
+                    <TextView
+                        android:id="@+id/tv_label_catch_rate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="Catch Rate: "
+                        android:textColor="#333333"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@id/gl_left_b1"
+                        app:layout_constraintTop_toBottomOf="@id/tv_value_hidden_power"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/tv_value_catch_rate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:textColor="#333333"
+                        android:textSize="10sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tv_label_catch_rate"
+                        app:layout_constraintStart_toStartOf="@id/gl_left_b2"
+                        tools:ignore="SmallSp"
+                        tools:text="45" />
+
+                    <TextView
+                        android:id="@+id/tv_label_generation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="Generation: "
+                        android:textColor="#333333"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@id/gl_left_b1"
+                        app:layout_constraintTop_toBottomOf="@id/tv_value_catch_rate"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/tv_value_generation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:textColor="#333333"
+                        android:textSize="10sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tv_label_generation"
+                        app:layout_constraintStart_toStartOf="@id/gl_left_b2"
+                        tools:ignore="SmallSp"
+                        android:text="GEN 1" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/gl_left_b1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="12dp" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/gl_left_b2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="90dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcv_detail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="22dp"
+                app:cardMaxElevation="4dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/mcv_trivia"
+                app:layout_constraintTop_toBottomOf="@id/mcv_image">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp">
+
+                    <TextView
+                        android:id="@+id/tv_label_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Details"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_label_species"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Species: "
+                        android:textColor="#333333"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@id/gl_left_a1"
+                        app:layout_constraintTop_toBottomOf="@id/tv_label_details"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/tv_value_species"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:textColor="#333333"
+                        android:textSize="10sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tv_label_species"
+                        app:layout_constraintStart_toStartOf="@id/gl_left_a2"
+                        tools:ignore="SmallSp"
+                        tools:text="Seed Pokemon" />
+
+                    <TextView
+                        android:id="@+id/tv_label_height"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="Height: "
+                        android:textColor="#333333"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@id/gl_left_a1"
+                        app:layout_constraintTop_toBottomOf="@id/tv_label_species"
+                        tools:ignore="SmallSp" />
+
+                    <TextView
+                        android:id="@+id/tv_value_height"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:textColor="#333333"
+                        android:textSize="10sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tv_label_height"
+                        app:layout_constraintStart_toStartOf="@id/gl_left_a2"
+                        tools:ignore="SmallSp"
+                        tools:text="1.1 m (3′07″)" />
+
+                    <TextView
+                        android:id="@+id/tv_label_weight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:textColor="#333333"
+                        android:textSize="10sp"
+                        app:layout_constraintStart_toStartOf="@id/gl_left_a1"
+                        app:layout_constraintTop_toBottomOf="@id/tv_label_height"
+                        tools:ignore="SmallSp"
+                        tools:text="Weight:" />
+
+                    <TextView
+                        android:id="@+id/tv_value_weight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:textColor="#333333"
+                        android:textSize="10sp"
+                        app:layout_constraintBaseline_toBaselineOf="@id/tv_label_weight"
+                        app:layout_constraintStart_toStartOf="@id/gl_left_a2"
+                        tools:ignore="SmallSp"
+                        tools:text="19.0 kg (41.9 lbs)" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/gl_left_a1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="12dp" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/gl_left_a2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="60dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

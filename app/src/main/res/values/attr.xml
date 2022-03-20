@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="GlobalAttributes">
+        <attr name="custom_text" format="string"/>
+        <attr name="custom_color" format="color"/>
+        <attr name="custom_left_icon" format="reference"/>
+        <attr name="custom_right_icon" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="CustomToolbar">
+        <attr name="custom_left_icon"/>
+        <attr name="custom_right_icon"/>
+        <attr name="custom_text"/>
+    </declare-styleable>
+</resources>
